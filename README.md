@@ -17,6 +17,7 @@ npx cap sync
 * [`startFindNewtworkService(...)`](#startfindnewtworkservice)
 * [`getAllNetworkService()`](#getallnetworkservice)
 * [`addListener('onServiceResolved', ...)`](#addlisteneronserviceresolved)
+* [`addListener('onServiceRemoved', ...)`](#addlisteneronserviceremoved)
 * [`addListener('onDiscoveryStopped', ...)`](#addlistenerondiscoverystopped)
 * [`addListener('onServiceError', ...)`](#addlisteneronserviceerror)
 * [Interfaces](#interfaces)
@@ -72,6 +73,28 @@ Provides <a href="#netservice">NetService</a> result.
 | Param              | Type                                                                 |
 | ------------------ | -------------------------------------------------------------------- |
 | **`eventName`**    | <code>'onServiceResolved'</code>                                     |
+| **`listenerFunc`** | <code>(data: <a href="#netservice">NetService</a>) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+**Since:** 0.0.1
+
+--------------------
+
+
+### addListener('onServiceRemoved', ...)
+
+```typescript
+addListener(eventName: "onServiceRemoved", listenerFunc: (data: NetService) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+Called when a service is removed and result received.
+
+Provides <a href="#netservice">NetService</a> result.
+
+| Param              | Type                                                                 |
+| ------------------ | -------------------------------------------------------------------- |
+| **`eventName`**    | <code>'onServiceRemoved'</code>                                      |
 | **`listenerFunc`** | <code>(data: <a href="#netservice">NetService</a>) =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>

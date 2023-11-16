@@ -45,8 +45,8 @@ class PONNetworkService {
                 self.serviceID = String(data: serviceIDData, encoding: .utf8) ?? ""
             }
 
-            if let serviceURL = dictionary["srvuri"] as? String, !serviceURL.isEmpty {
-                self.serviceURL = serviceURL
+            if let serviceURL = dictionary["srvuri"] {
+                self.serviceURL = String(data: serviceURL, encoding: .utf8) ?? ""
             } else if self.serviceType == 2 {
                 self.serviceURL = "https://www.printeron.net"
             } else {
