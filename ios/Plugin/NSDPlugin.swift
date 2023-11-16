@@ -62,6 +62,10 @@ public class NSDPlugin: CAPPlugin, NetServiceBrowserDelegate, NetServiceDelegate
         }
     }
     
+    public func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
+        self.notifyListeners("onServiceRemoved", data: ["service": makeObject(PONNetworkService(service: service))])
+    }
+    
     public func netServiceDidResolveAddress(_ service: NetService) {
         let jsObject = makeObject(PONNetworkService(service: service))
         self.notifyListeners("onServiceResolved", data: jsObject)

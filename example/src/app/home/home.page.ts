@@ -20,6 +20,9 @@ export class HomePage implements OnInit {
     NSD.addListener('onServiceResolved', (data: NetService) => {
       console.log(data);
     })
+    NSD.addListener('onServiceRemoved', (data: NetService) => {
+      console.log(data);
+    })
   }
 
   findNewtworkService() {

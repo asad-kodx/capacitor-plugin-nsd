@@ -33,6 +33,15 @@ export interface NSDPlugin {
   addListener(eventName: "onServiceResolved", listenerFunc: (data: NetService) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
+     * Called when a service is removed and result received.
+     *
+     * Provides NetService result.
+     *
+     * @since 0.0.1
+     */
+  addListener(eventName: "onServiceRemoved", listenerFunc: (data: NetService) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+
+  /**
      * Called when a service discovery is stopped.
      *
      * Provides no result.
