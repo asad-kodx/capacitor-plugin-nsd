@@ -1,6 +1,6 @@
 # capacitor-plugin-nsd
 
-capacitor plugin nsd
+capacitor plugin nsd (network service discovery)
 
 ## Install
 
